@@ -1,4 +1,4 @@
-package com.example.zhangziyu.linechartdemo.Model.Enums;
+package com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Enums;
 
 /**
  * Created by zhangziyu on 2017/6/26.

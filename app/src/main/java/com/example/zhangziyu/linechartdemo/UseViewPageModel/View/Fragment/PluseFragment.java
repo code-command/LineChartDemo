@@ -39,7 +39,7 @@ public class PluseFragment extends Fragment {
 
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         systemInfo = SystemInfo.getSystemInfo();
         Bundle bundle = getArguments();
@@ -50,7 +50,7 @@ public class PluseFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = View.inflate(getContext(), R.layout.fragment_useviewpager_pluse, null);
 
         bindingData(view);

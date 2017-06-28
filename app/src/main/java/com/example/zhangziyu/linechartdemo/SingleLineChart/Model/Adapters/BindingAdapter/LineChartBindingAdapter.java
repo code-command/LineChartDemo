@@ -1,11 +1,11 @@
-package com.example.zhangziyu.linechartdemo.Model.Adapters.BindingAdapter;
+package com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Adapters.BindingAdapter;
 
 import android.databinding.BindingAdapter;
 import android.graphics.Color;
 import android.widget.Toast;
 
-import com.example.zhangziyu.linechartdemo.Model.Bean.SystemInfo;
-import com.example.zhangziyu.linechartdemo.Model.Enums.CmdCode;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Bean.SystemInfo;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Enums.CmdCode;
 import com.example.zhangziyu.linechartdemo.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;

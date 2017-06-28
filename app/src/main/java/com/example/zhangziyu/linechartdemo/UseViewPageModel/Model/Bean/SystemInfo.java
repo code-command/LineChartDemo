@@ -4,7 +4,7 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.example.zhangziyu.linechartdemo.BR;
-import com.example.zhangziyu.linechartdemo.Model.Enums.CmdCode;
+import com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Enums.CmdCode;
 
 /**
  * Created by zhangziyu on 2017/6/26.

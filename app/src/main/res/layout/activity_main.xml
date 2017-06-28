@@ -5,19 +5,19 @@
     <data>
         <variable
             name="systemInfo"
-            type="com.example.zhangziyu.linechartdemo.Model.Bean.SystemInfo"/>
+            type="com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Bean.SystemInfo"/>
 
         <variable
             name="switchViewModel"
-            type="com.example.zhangziyu.linechartdemo.ViewModel.ButtonViewModel.SwitchButtonViewModel"/>
+            type="com.example.zhangziyu.linechartdemo.SingleLineChart.ViewModel.ButtonViewModel.SwitchButtonViewModel"/>
 
         <variable
             name="addViewModel"
-            type="com.example.zhangziyu.linechartdemo.ViewModel.ButtonViewModel.AddButtonViewModel"/>
+            type="com.example.zhangziyu.linechartdemo.SingleLineChart.ViewModel.ButtonViewModel.AddButtonViewModel"/>
 
         <variable
             name="clearViewModel"
-            type="com.example.zhangziyu.linechartdemo.ViewModel.ButtonViewModel.ClearButtonViewModel"/>
+            type="com.example.zhangziyu.linechartdemo.SingleLineChart.ViewModel.ButtonViewModel.ClearButtonViewModel"/>
     </data>
 
 

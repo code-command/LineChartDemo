@@ -1,4 +1,4 @@
-package com.example.zhangziyu.linechartdemo.Model.Widget;
+package com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Widget;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

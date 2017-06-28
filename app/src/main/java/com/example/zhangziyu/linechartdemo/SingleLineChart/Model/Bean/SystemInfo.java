@@ -1,10 +1,10 @@
-package com.example.zhangziyu.linechartdemo.Model.Bean;
+package com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Bean;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.example.zhangziyu.linechartdemo.BR;
-import com.example.zhangziyu.linechartdemo.Model.Enums.CmdCode;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Enums.CmdCode;
 
 /**
  * Created by zhangziyu on 2017/6/26.

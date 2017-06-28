@@ -1,10 +1,10 @@
-package com.example.zhangziyu.linechartdemo.ViewModel.ButtonViewModel;
+package com.example.zhangziyu.linechartdemo.SingleLineChart.ViewModel.ButtonViewModel;
 
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.example.zhangziyu.linechartdemo.Model.Bean.SystemInfo;
-import com.example.zhangziyu.linechartdemo.Model.Enums.CmdCode;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Bean.SystemInfo;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Enums.CmdCode;
 
 /**
  * Created by zhangziyu on 2017/6/26.

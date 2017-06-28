@@ -1,14 +1,14 @@
-package com.example.zhangziyu.linechartdemo.View.Activity;
+package com.example.zhangziyu.linechartdemo.SingleLineChart.View.Activity;
 
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.example.zhangziyu.linechartdemo.Model.Bean.SystemInfo;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.Model.Bean.SystemInfo;
 import com.example.zhangziyu.linechartdemo.R;
-import com.example.zhangziyu.linechartdemo.ViewModel.ButtonViewModel.AddButtonViewModel;
-import com.example.zhangziyu.linechartdemo.ViewModel.ButtonViewModel.ClearButtonViewModel;
-import com.example.zhangziyu.linechartdemo.ViewModel.ButtonViewModel.SwitchButtonViewModel;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.ViewModel.ButtonViewModel.AddButtonViewModel;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.ViewModel.ButtonViewModel.ClearButtonViewModel;
+import com.example.zhangziyu.linechartdemo.SingleLineChart.ViewModel.ButtonViewModel.SwitchButtonViewModel;
 import com.example.zhangziyu.linechartdemo.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

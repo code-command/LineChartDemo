@@ -6,19 +6,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 
 import com.example.zhangziyu.linechartdemo.BR;
 import com.example.zhangziyu.linechartdemo.R;
 import com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Adapters.ViewPageAdapter.CommentPagerAdapter;
 import com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Bean.SystemInfo;
-import com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Widget.CustomViewPage;
 import com.example.zhangziyu.linechartdemo.UseViewPageModel.View.Fragment.PluseFragment;
 import com.example.zhangziyu.linechartdemo.UseViewPageModel.ViewModel.ButtonViewModel.AddButtonViewModel;
 import com.example.zhangziyu.linechartdemo.UseViewPageModel.ViewModel.ButtonViewModel.ClearButtonViewModel;
 import com.example.zhangziyu.linechartdemo.UseViewPageModel.ViewModel.ButtonViewModel.SwitchButtonViewModel;
 import com.example.zhangziyu.linechartdemo.UseViewPageModel.ViewModel.ButtonViewModel.SwitchPagerButtonViewModel;
-import com.example.zhangziyu.linechartdemo.databinding.ActivityMainBinding;
 import com.example.zhangziyu.linechartdemo.databinding.ActivityUseviewpageMainBinding;
 
 import java.util.ArrayList;
@@ -59,6 +56,7 @@ public class UseViewPageMainActivity extends AppCompatActivity {
 
     private void initViewPager() {
 
+        dataValues.add(0.1f);
         PluseFragment pluseFragment1 = PluseFragment.newInstance(dataValues);
         PluseFragment pluseFragment2 = PluseFragment.newInstance(dataValues);
 
@@ -68,8 +66,9 @@ public class UseViewPageMainActivity extends AppCompatActivity {
 
         commentPagerAdapter = new CommentPagerAdapter(fragments, R.layout.fragment_useviewpager_pluse, BR.dataValues);
 
-        
-        binding.cvpChartPager.setAdapter(commentPagerAdapter);
+        vpAdapter = new VpAdapter(getSupportFragmentManager(), fragments);
+
+//        binding.cvpChartPager.setAdapter(commentPagerAdapter);
     }
 
     private void bindingData() {
@@ -81,6 +80,8 @@ public class UseViewPageMainActivity extends AppCompatActivity {
         binding.setClearViewModel(clearButtonViewModel);
         binding.setSwitchPagerViewModel(switchPagerButtonViewModel);
         binding.setViewPagerAdapter(commentPagerAdapter);
+
+        binding.cvpChartPager.setAdapter(vpAdapter);
     }
 
     private static class VpAdapter extends FragmentPagerAdapter {
