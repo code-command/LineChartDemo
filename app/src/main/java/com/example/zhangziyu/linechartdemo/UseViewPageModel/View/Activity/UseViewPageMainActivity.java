@@ -68,8 +68,8 @@ public class UseViewPageMainActivity extends AppCompatActivity {
 
         commentPagerAdapter = new CommentPagerAdapter(fragments, R.layout.fragment_useviewpager_pluse, BR.dataValues);
 
-        vpAdapter = new VpAdapter(getSupportFragmentManager(), fragments);
-        binding.cvpChartPager.setAdapter(vpAdapter);
+        
+        binding.cvpChartPager.setAdapter(commentPagerAdapter);
     }
 
     private void bindingData() {
