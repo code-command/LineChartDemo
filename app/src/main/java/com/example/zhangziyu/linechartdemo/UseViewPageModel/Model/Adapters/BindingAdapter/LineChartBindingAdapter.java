@@ -1,10 +1,9 @@
-package com.example.zhangziyu.linechartdemo.Model.Adapters.BindingAdapter;
+package com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Adapters.BindingAdapter;
 
 import android.databinding.BindingAdapter;
 import android.graphics.Color;
 import android.widget.Toast;
 
-import com.example.zhangziyu.linechartdemo.Model.Bean.SystemInfo;
 import com.example.zhangziyu.linechartdemo.Model.Enums.CmdCode;
 import com.example.zhangziyu.linechartdemo.R;
 import com.github.mikephil.charting.charts.LineChart;
@@ -15,15 +14,18 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
+import java.util.List;
+
 /**
  * Created by zhangziyu on 2017/6/26.
  */
 
 public class LineChartBindingAdapter {
 
-    @BindingAdapter({"isOpen", "cmdCode"})
-    public static void setLineChart(LineChart lineChart, boolean open, CmdCode cmdCode) {
-        showToast(lineChart, open, cmdCode);
+    @BindingAdapter({"isOpen", "cmdCode","dataValues"})
+    public static void setLineChart(LineChart lineChart, boolean open, CmdCode cmdCode,
+                                    List dataValues) {
+//        showToast(lineChart, open, cmdCode);
         if (!open && cmdCode==CmdCode.CMD_END) {
             initLineChart(lineChart);
             return;
@@ -33,32 +35,7 @@ public class LineChartBindingAdapter {
             return;
         }
         if (open && cmdCode==CmdCode.CMD_ADD) {
-            addEntry(lineChart);
-            return;
-        }
-        if (open && (cmdCode==CmdCode.CMD_CLEAR || cmdCode==CmdCode.CMD_EMPTY || cmdCode==CmdCode.CMD_END)) {
-            clearEntry(lineChart);
-            return;
-        }
-    }
-
-    @BindingAdapter("systemInfo")
-    public static void setLineChart(LineChart lineChart, SystemInfo systemInfo) {
-
-        boolean open = systemInfo.isOpen();
-        CmdCode cmdCode = systemInfo.getCmdCode();
-
-        showToast(lineChart, open, cmdCode);
-        if (!open && cmdCode==CmdCode.CMD_END) {
-            initLineChart(lineChart);
-            return;
-        }
-        if (!open && cmdCode==CmdCode.CMD_EMPTY) {
-            closeChart(lineChart);
-            return;
-        }
-        if (open && cmdCode==CmdCode.CMD_ADD) {
-            addEntry(lineChart);
+            addEntry(lineChart, dataValues);
             return;
         }
         if (open && (cmdCode==CmdCode.CMD_CLEAR || cmdCode==CmdCode.CMD_EMPTY || cmdCode==CmdCode.CMD_END)) {
@@ -98,7 +75,7 @@ public class LineChartBindingAdapter {
         rightYAxis.setEnabled(false);
     }
 
-    private static void addEntry(LineChart lineChart) {
+    private static void addEntry(LineChart lineChart, List dataValues) {
         LineData data = lineChart.getData();
         if (data == null) {
             lineChart.setData(new LineData());
@@ -111,10 +88,9 @@ public class LineChartBindingAdapter {
             data.addDataSet(set);
         }
 
-        for (int i=0; i<10; i++) {
-            float yValue = (float) (Math.random() * 10) + 50f;
-
-            data.addEntry(new Entry(data.getDataSetByIndex(0).getEntryCount(), yValue), 0);
+        int listLength = dataValues.size();
+        for (int i=0; i<listLength; i++) {
+            data.addEntry(new Entry(data.getDataSetByIndex(0).getEntryCount(), (float)dataValues.get(i)), 0);
             data.notifyDataChanged();
         }
 

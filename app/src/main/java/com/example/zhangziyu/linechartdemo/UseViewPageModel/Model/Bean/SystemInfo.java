@@ -1,4 +1,4 @@
-package com.example.zhangziyu.linechartdemo.Model.Bean;
+package com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Bean;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;

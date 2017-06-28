@@ -6,4 +6,5 @@
 
     <string name="clear">清空显示</string>
     <string name="addValue">添加数据</string>
+    <string name="switchPager">切换Pager</string>
 </resources>

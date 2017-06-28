@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewPagerAdapter"
+            type="com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Adapters.ViewPageAdapter.CommentPagerAdapter"/>
+
+        <variable
+            name="systemInfo"
+            type="com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Bean.SystemInfo"/>
+
+        <variable
+            name="switchViewModel"
+            type="com.example.zhangziyu.linechartdemo.UseViewPageModel.ViewModel.ButtonViewModel.SwitchButtonViewModel"/>
+
+        <variable
+            name="addViewModel"
+            type="com.example.zhangziyu.linechartdemo.UseViewPageModel.ViewModel.ButtonViewModel.AddButtonViewModel"/>
+
+        <variable
+            name="clearViewModel"
+            type="com.example.zhangziyu.linechartdemo.UseViewPageModel.ViewModel.ButtonViewModel.ClearButtonViewModel"/>
+
+        <variable
+            name="switchPagerViewModel"
+            type="com.example.zhangziyu.linechartdemo.UseViewPageModel.ViewModel.ButtonViewModel.SwitchPagerButtonViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Widget.CustomViewPage
+            android:id="@+id/cvp_chartPager"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:isShowPluse="@{systemInfo.pluseShow}">
+
+        </com.example.zhangziyu.linechartdemo.UseViewPageModel.Model.Widget.CustomViewPage>
+
+        <Button
+            android:id="@+id/btn_siwtch"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@{systemInfo.open ? @string/close : @string/open}"
+            android:onClick="@{switchViewModel.onClick}"
+            android:background="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/addValue"
+            android:onClick="@{addViewModel.onClick}"
+            android:background="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/clear"
+            android:onClick="@{clearViewModel.onClick}"
+            android:background="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/btn_switchPager"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/switchPager"
+            android:onClick="@{switchPagerViewModel.onClick}"
+            android:background="@color/colorPrimary"/>
+
+    </LinearLayout>
+</layout>
